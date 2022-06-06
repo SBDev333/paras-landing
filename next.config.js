@@ -49,6 +49,7 @@ const moduleExports = {
 		 */
 		defaultLocale: 'en',
 	},
+	dryRun: process.env.VERCEL_ENV !== 'production',
 }
 
 const SentryWebpackPluginOptions = {

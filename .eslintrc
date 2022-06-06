@@ -1,0 +1,21 @@
+{
+	"env": {
+		"node": true,
+		"browser": true,
+		"es2020": true
+	},
+	"extends": ["next", "eslint:recommended", "prettier"],
+	"plugins": ["react-hooks"],
+	"rules": {
+		"semi": 0,
+		"indent": "off",
+		"no-tabs": "off",
+		"react-hooks/exhaustive-deps": "off",
+		"@next/next/link-passhref": "off",
+		"@next/next/no-img-element": "off",
+		"jsx-a11y/alt-text": "off",
+		"no-unused-vars": "warn",
+		"no-useless-catch": "warn",
+		"no-console": "warn"
+	}
+}

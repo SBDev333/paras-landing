@@ -1,0 +1,487 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+	font-family: 'Epilogue', sans-serif;
+}
+
+hr {
+	@apply border-gray-400;
+}
+
+a {
+	@apply font-medium;
+}
+
+p {
+	@apply tracking-wide;
+}
+
+button:focus {
+	@apply outline-none;
+}
+
+button:disabled {
+	@apply opacity-50 cursor-not-allowed;
+}
+
+.font-semibold {
+	@apply tracking-tight;
+}
+
+input[type='time']::-webkit-calendar-picker-indicator {
+	filter: invert(100%) sepia(0%);
+	font-size: 15px;
+}
+
+input[type='time'] {
+	font-size: 15px;
+}
+
+input[type='date']::-webkit-calendar-picker-indicator {
+	filter: invert(100%) sepia(0%);
+}
+
+input[type='date'] {
+	font-size: 15px;
+	text-align: right;
+}
+
+input:focus,
+textarea:focus {
+	@apply outline-none;
+}
+
+input,
+textarea {
+	@apply bg-gray-300 p-2 rounded-md border-2 border-transparent w-full;
+}
+
+input:focus,
+textarea:focus {
+	@apply bg-gray-100 border-dark-primary-1;
+}
+
+input.error,
+textarea.error,
+.error {
+	@apply border-red-500;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+/* Firefox */
+input[type='number'] {
+	-moz-appearance: textfield;
+}
+
+input:-internal-autofill-selected {
+	transition: background-color 600000s, color 600000s;
+}
+
+input.clear {
+	@apply bg-transparent p-0 border-0;
+}
+
+.button-wrapper:hover {
+	@apply bg-gray-100 bg-opacity-15;
+}
+
+.faq a {
+	@apply border-b-2 border-transparent border-gray-100;
+}
+
+.faq span {
+	@apply opacity-75;
+}
+
+.faq span a:hover {
+	@apply opacity-100;
+}
+
+.dot {
+	transition: opacity 0.25s ease-in;
+	opacity: 0.3;
+	filter: alpha(opacity=30);
+	box-shadow: none !important;
+	border-radius: 50%;
+	width: 8px;
+	height: 8px;
+	cursor: pointer;
+	display: inline-block;
+	margin: 0 8px;
+}
+
+.youtube-container {
+	position: relative;
+	width: 100%;
+	height: 0;
+	padding-bottom: 56.25%;
+	overflow: hidden;
+	@apply bg-dark-primary-3 rounded-lg overflow-hidden;
+}
+
+.youtube-container iframe {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.card-wrap {
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	cursor: pointer;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	-webkit-tap-highlight-color: transparent;
+	width: 100%;
+	height: 100%;
+	@apply mx-auto;
+}
+.card-wrap:hover .card-bg {
+	-webkit-transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1), opacity 5s cubic-bezier(0.23, 1, 0.32, 1);
+	transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1), opacity 5s cubic-bezier(0.23, 1, 0.32, 1);
+	opacity: 0.8;
+}
+.card-wrap:hover .card {
+	-webkit-transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1),
+		box-shadow 2s cubic-bezier(0.23, 1, 0.32, 1);
+	transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 2s cubic-bezier(0.23, 1, 0.32, 1);
+
+	box-shadow: rgba(255, 255, 255, 0.2) 0 0 10px 5px, white 0 0 0 1px,
+		rgba(0, 0, 0, 0.66) 0 20px 30px 0;
+}
+
+.card {
+	position: relative;
+	overflow: hidden;
+	border-radius: 10px;
+	-webkit-transition: transform 1s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+	transition: transform 1s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+	box-shadow: rgba(255, 255, 255, 0.3) 0 0 0 1px;
+}
+
+.card-bg {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	-webkit-transition: 1s cubic-bezier(0.445, 0.05, 0.55, 0.95),
+		opacity 5s 1s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+	transition: 1s cubic-bezier(0.445, 0.05, 0.55, 0.95),
+		opacity 5s 1s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+	pointer-events: none;
+}
+
+.publication-card:hover .publication-card-img {
+	@apply transform duration-300 scale-110;
+}
+
+.category-description a {
+	@apply text-white border-b-2 border-white;
+}
+
+/*!
+ * Hamburgers
+ * @description Tasty CSS-animated hamburgers
+ * @author Jonathan Suh @jonsuh
+ * @site https://jonsuh.com/hamburgers
+ * @link https://github.com/jonsuh/hamburgers
+ */
+.hamburger {
+	display: inline-block;
+	cursor: pointer;
+	transition-property: opacity, filter;
+	transition-duration: 0.15s;
+	transition-timing-function: linear;
+	font: inherit;
+	color: inherit;
+	text-transform: none;
+	background-color: transparent;
+	border: 0;
+	margin: 0;
+	overflow: visible;
+}
+.hamburger:hover {
+	opacity: 0.7;
+}
+.hamburger.is-active:hover {
+	opacity: 0.7;
+}
+.hamburger.is-active .hamburger-inner,
+.hamburger.is-active .hamburger-inner::before,
+.hamburger.is-active .hamburger-inner::after {
+	@apply bg-gray-100;
+}
+
+.hamburger-box {
+	width: 24px;
+	height: 8px;
+	display: inline-block;
+	position: relative;
+}
+
+.hamburger-inner {
+	display: block;
+	top: 50%;
+	margin-top: -2px;
+}
+.hamburger-inner,
+.hamburger-inner::before,
+.hamburger-inner::after {
+	width: 24px;
+	height: 4px;
+	border-radius: 4px;
+	position: absolute;
+	transition-property: transform;
+	transition-duration: 0.15s;
+	transition-timing-function: ease;
+	@apply bg-gray-100;
+}
+.hamburger-inner::before,
+.hamburger-inner::after {
+	content: '';
+	display: block;
+}
+.hamburger-inner::before {
+	top: -8px;
+}
+.hamburger-inner::after {
+	bottom: -8px;
+}
+
+/*
+   * Squeeze
+   */
+.hamburger--squeeze .hamburger-inner {
+	transition-duration: 0.075s;
+	transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+.hamburger--squeeze .hamburger-inner::before {
+	transition: top 0.075s 0.12s ease, opacity 0.075s ease;
+}
+.hamburger--squeeze .hamburger-inner::after {
+	transition: bottom 0.075s 0.12s ease, transform 0.075s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.hamburger--squeeze.is-active .hamburger-inner {
+	transform: rotate(45deg);
+	transition-delay: 0.12s;
+	transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.hamburger--squeeze.is-active .hamburger-inner::before {
+	top: 0;
+	opacity: 0;
+	transition: top 0.075s ease, opacity 0.075s 0.12s ease;
+}
+.hamburger--squeeze.is-active .hamburger-inner::after {
+	bottom: 0;
+	transform: rotate(-90deg);
+	transition: bottom 0.075s ease, transform 0.075s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.titlePublication {
+	background: transparent;
+	color: white;
+	border: none;
+}
+
+.titlePublication:focus {
+	background: transparent;
+	color: white;
+	border: none;
+}
+
+.titlePublication::-webkit-input-placeholder {
+	color: #9197a3;
+}
+.titlePublication:focus::-webkit-input-placeholder {
+	color: #bdc1c9;
+}
+
+.RichEditor-root {
+	font-size: 14px;
+	padding-top: 0;
+}
+
+.RichEditor-editor {
+	cursor: text;
+	margin-bottom: 10px;
+}
+
+.RichEditor-editor .public-DraftEditorPlaceholder-root,
+.RichEditor-editor .public-DraftEditor-content {
+	margin: 0 -1rem 0;
+	padding: 1rem;
+}
+
+.RichEditor-editor .public-DraftEditor-content {
+	min-height: 100px;
+}
+
+.RichEditor-hidePlaceholder .public-DraftEditorPlaceholder-root {
+	display: none;
+}
+
+.RichEditor-editor .RichEditor-blockquote {
+	border-left: 5px solid #ddd;
+	color: #ddd;
+	font-family: 'Hoefler Text', 'Georgia', serif;
+	font-style: italic;
+	margin: 1rem 0;
+	padding: 0.75rem 1.5rem;
+}
+
+.RichEditor-editor .public-DraftStyleDefault-pre {
+	background-color: #1a202c;
+	font-size: 16px;
+	padding: 20px;
+	margin: 1rem 0;
+}
+
+.RichEditor-controls {
+	font-size: 14px;
+	margin-top: 5px;
+	user-select: none;
+}
+
+.RichEditor-styleButton {
+	color: #999;
+	cursor: pointer;
+	margin-right: 16px;
+	padding: 2px 0;
+	display: inline-block;
+}
+
+.RichEditor-activeButton {
+	color: #5890ff;
+}
+
+.embedVideo {
+	height: 480px;
+}
+
+.fireText {
+	text-shadow: 0 0 20px #c9d1fe, -19px -20px 40px #0011ff, -1px -9px 20px #0c2eec,
+		-20px -60px 60px #06afcd, 1px -19px 70px #1f1697, 1px -14px 80px #0e1445,
+		0px 0 8px rgb(0, 89, 255), 0 0 8px rgb(0, 195, 255), 0 0 5px #1300ba;
+}
+
+@media (max-width: 768px) {
+	.embedVideo {
+		height: 210px;
+	}
+}
+
+.toggle-checkbox:checked {
+	@apply: right-0 border-green-400;
+	right: 0;
+	border-color: #68d391;
+}
+
+.toggle-checkbox:checked + .toggle-label {
+	@apply: bg-green-400;
+	background-color: #68d391;
+}
+
+.form-switch {
+	@apply relative select-none w-12 mr-2 leading-normal;
+}
+.form-switch-checkbox {
+	@apply hidden;
+}
+
+.form-switch-label {
+	@apply block overflow-hidden cursor-pointer bg-white rounded-full h-6  shadow-inner;
+	transition: background-color 0.2s ease-in;
+}
+
+.form-switch-label:before {
+	@apply absolute block bg-white inset-y-0 w-6 border rounded-full -ml-1;
+	right: 50%;
+	content: '';
+	transition: all 0.2s ease-in;
+}
+.form-switch-checkbox:checked + .form-switch-label,
+.form-switch-checkbox:checked + .form-switch-label:before {
+}
+
+.form-switch-checkbox:checked + .form-switch-label {
+	@apply bg-green-500 shadow-none;
+}
+
+.form-switch-checkbox:checked + .form-switch-label:before {
+	@apply right-0;
+}
+
+.disable-scrollbars::-webkit-scrollbar {
+	width: 0px;
+	background: transparent; /* Chrome/Safari/Webkit */
+}
+
+.disable-scrollbars {
+	scrollbar-width: none; /* Firefox */
+	-ms-overflow-style: none; /* IE 10+ */
+}
+.pointer {
+	cursor: pointer;
+}
+
+.img-hor-vert {
+	-moz-transform: scale(-1, 1);
+	-o-transform: scale(-1, 1);
+	-webkit-transform: scale(-1, 1);
+	transform: scale(-1, 1);
+}
+
+.pixelated {
+	image-rendering: -moz-crisp-edges;
+	image-rendering: -webkit-crisp-edges;
+	image-rendering: pixelated;
+	image-rendering: crisp-edges;
+}
+
+.top-user-scroll::-webkit-scrollbar {
+	height: 6px;
+	background: transparent;
+	border: white;
+}
+
+.top-user-scroll::-webkit-scrollbar-thumb {
+	box-shadow: inset 0 0 6px rgb(32, 32, 32);
+	border-radius: 20px;
+}
+
+.top-user-scroll::-webkit-scrollbar-thumb:hover {
+	box-shadow: inset 0 0 6px rgb(56, 56, 56);
+	border-radius: 20px;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera (NearTracker) */
+.no-scrollbar::-webkit-scrollbar {
+	display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox (NearTracker) */
+.no-scrollbar {
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+}
+
+/* Hide Calendar Icon In Chrome */
+input[type='time']::-webkit-inner-spin-button,
+input[type='time']::-webkit-calendar-picker-indicator {
+	display: none;
+	-webkit-appearance: none;
+}

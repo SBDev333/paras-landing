@@ -7,7 +7,7 @@ import * as Sentry from '@sentry/nextjs'
 Sentry.init({
 	dsn:
 		process.env.NODE_ENV === 'production' && process.env.APP_ENV === 'production'
-			? 'https://1148bd7ae2364e64bcf607d8bc4cca8a@o989538.ingest.sentry.io/5946256'
+			? 'https://1744c3a5304a4f8bac62f766a25147d9@o1278248.ingest.sentry.io/6477391'
 			: '',
 	ignoreErrors: [
 		'Network request failed',

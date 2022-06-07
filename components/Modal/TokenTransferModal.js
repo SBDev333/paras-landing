@@ -9,7 +9,7 @@ import getConfig from 'config/near'
 import Axios from 'axios'
 import { useToast } from 'hooks/useToast'
 import { useIntl } from 'hooks/useIntl'
-import { sentryCaptureException } from 'lib/sentry'
+
 import { trackTransferToken } from 'lib/ga'
 import useStore from 'lib/store'
 import WalletHelper from 'lib/WalletHelper'
@@ -52,7 +52,7 @@ const TokenTransferModal = ({ show, onClose, data }) => {
 				throw new Error(`Account ${receiverId} not exist`)
 			}
 		} catch (err) {
-			sentryCaptureException(err)
+			//
 			const message = err.message || 'Something went wrong, try again later'
 			toast.show({
 				text: <div className="font-semibold text-center text-sm">{message}</div>,
@@ -99,7 +99,7 @@ const TokenTransferModal = ({ show, onClose, data }) => {
 			}
 			setIsTransferring(false)
 		} catch (err) {
-			sentryCaptureException(err)
+			//
 			setIsTransferring(false)
 		}
 	}

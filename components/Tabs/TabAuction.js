@@ -2,7 +2,7 @@ import cachios from 'cachios'
 import LinkToProfile from 'components/Common/LinkToProfile'
 import { useEffect, useState } from 'react'
 import { useIntl } from 'hooks/useIntl'
-import { sentryCaptureException } from 'lib/sentry'
+
 import { parseImgUrl, prettyBalance, prettyTruncate } from 'utils/common'
 import Avatar from 'components/Common/Avatar'
 import Link from 'next/link'
@@ -165,7 +165,7 @@ const CurrentBid = ({ initial = {} }) => {
 			const newData = resp.data.data.results[0] || {}
 			setProfile(newData)
 		} catch (err) {
-			sentryCaptureException(err)
+			//
 		}
 	}
 

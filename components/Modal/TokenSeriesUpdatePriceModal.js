@@ -7,7 +7,7 @@ import { InputText } from 'components/Common/form'
 import { GAS_FEE } from 'config/constants'
 import { IconInfo, IconX } from 'components/Icons'
 import { useIntl } from 'hooks/useIntl'
-import { sentryCaptureException } from 'lib/sentry'
+
 import { trackRemoveListingTokenSeries, trackUpdateListingTokenSeries } from 'lib/ga'
 import { useForm } from 'react-hook-form'
 import Tooltip from 'components/Common/Tooltip'
@@ -85,7 +85,7 @@ const TokenSeriesUpdatePriceModal = ({ show, onClose, data }) => {
 			}
 			setIsUpdatingPrice(false)
 		} catch (err) {
-			sentryCaptureException(err)
+			//
 		}
 	}
 
@@ -115,7 +115,7 @@ const TokenSeriesUpdatePriceModal = ({ show, onClose, data }) => {
 			}
 			setIsRemovingPrice(false)
 		} catch (err) {
-			sentryCaptureException(err)
+			//
 		}
 	}
 

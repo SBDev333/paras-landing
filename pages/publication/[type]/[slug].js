@@ -17,7 +17,7 @@ import Modal from 'components/Modal'
 import useStore from 'lib/store'
 import EmbeddedCard from 'components/Publication/EmbeddedCard'
 import { useToast } from 'hooks/useToast'
-import { sentryCaptureException } from 'lib/sentry'
+
 import WalletHelper from 'lib/WalletHelper'
 
 const PublicationDetailPage = ({ errorCode, pubDetail, userProfile }) => {
@@ -77,7 +77,7 @@ const PublicationDetailPage = ({ errorCode, pubDetail, userProfile }) => {
 				router.push('/publication')
 			}, 1000)
 		} catch (err) {
-			sentryCaptureException(err)
+			//
 			const msg = err.response?.data?.message || 'Something went wrong, try again later.'
 			toast.show({
 				text: <div className="font-semibold text-center text-sm">{msg}</div>,

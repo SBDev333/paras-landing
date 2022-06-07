@@ -3,7 +3,7 @@ import useStore from 'lib/store'
 import { useIntl } from 'hooks/useIntl'
 import Button from 'components/Common/Button'
 import { InputText } from 'components/Common/form'
-import { sentryCaptureException } from 'lib/sentry'
+
 import { GAS_FEE, STORAGE_ADD_MARKET_FEE } from 'config/constants'
 import { formatNearAmount, parseNearAmount } from 'near-api-js/lib/utils/format'
 import JSBI from 'jsbi'
@@ -74,7 +74,7 @@ const TabCreateAuction = ({ data, onClose }) => {
 				setNeedDeposit(true)
 			}
 		} catch (err) {
-			sentryCaptureException(err)
+			//
 		}
 	}
 
@@ -183,7 +183,7 @@ const TabCreateAuction = ({ data, onClose }) => {
 			}
 			setIsCreatingPrice(false)
 		} catch (err) {
-			sentryCaptureException(err)
+			//
 			setIsCreatingPrice(false)
 		}
 	}

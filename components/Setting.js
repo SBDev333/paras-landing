@@ -1,5 +1,5 @@
 import Axios from 'axios'
-import { sentryCaptureException } from 'lib/sentry'
+
 import { useEffect, useState } from 'react'
 import { useToast } from 'hooks/useToast'
 import { useIntl } from 'hooks/useIntl'
@@ -57,7 +57,7 @@ const Setting = ({ close }) => {
 			setIsUpdating(false)
 			fetchEmail()
 		} catch (err) {
-			sentryCaptureException(err)
+			//
 			const message = err.response.data.message
 			toast.show({
 				text: <div className="font-semibold text-center text-sm">{message}</div>,

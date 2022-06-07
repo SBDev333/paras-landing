@@ -12,7 +12,6 @@ import near from 'lib/near'
 import JSBI from 'jsbi'
 import AnimatedNumber from 'react-awesome-animated-number'
 import 'react-awesome-animated-number/dist/index.css'
-import { sentryCaptureException } from 'lib/sentry'
 
 export default function Home() {
 	const store = useStore()
@@ -180,7 +179,7 @@ export default function Home() {
 				// }
 				// console.log(poolData)
 			} catch (err) {
-				sentryCaptureException(err)
+				//
 			}
 		}
 
@@ -194,7 +193,7 @@ export default function Home() {
 				setCurMarket(curPrice * curSupply)
 				setTotalSupply(100000000)
 			} catch (err) {
-				sentryCaptureException(err)
+				//
 			}
 		}
 

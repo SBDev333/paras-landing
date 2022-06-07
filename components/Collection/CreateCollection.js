@@ -8,7 +8,7 @@ import Axios from 'axios'
 import { useToast } from 'hooks/useToast'
 import { useRouter } from 'next/router'
 import { useIntl } from 'hooks/useIntl'
-import { sentryCaptureException } from 'lib/sentry'
+
 import WalletHelper from 'lib/WalletHelper'
 
 const CreateCollection = ({ onFinishCreate, oneGrid }) => {
@@ -129,7 +129,7 @@ const CreateCollection = ({ onFinishCreate, oneGrid }) => {
 					: onFinishDefault(resp.data.data.collection.collection_id)
 			}
 		} catch (err) {
-			sentryCaptureException(err)
+			//
 			const msg = err.response?.data?.message || 'Something went wrong, try again later.'
 			toast.show({
 				text: <div className="font-semibold text-center text-sm">{msg}</div>,

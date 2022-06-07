@@ -6,7 +6,7 @@ import InfiniteScroll from 'react-infinite-scroll-component'
 import { useIntl } from 'hooks/useIntl'
 import useStore from 'lib/store'
 import Button from 'components/Common/Button'
-import { sentryCaptureException } from 'lib/sentry'
+
 import {
 	GAS_FEE,
 	ACCEPT_GAS_FEE,
@@ -92,7 +92,7 @@ const Offer = ({
 			const newData = resp.data.data.results[0] || {}
 			setProfile(newData)
 		} catch (err) {
-			sentryCaptureException(err)
+			//
 		}
 	}
 
@@ -195,7 +195,7 @@ const Offer = ({
 				}
 			}
 		} catch (error) {
-			sentryCaptureException(error)
+			//
 		}
 	}
 
@@ -445,7 +445,7 @@ const TabOffers = ({ localToken }) => {
 
 			setIsAcceptingOffer(false)
 		} catch (err) {
-			sentryCaptureException(err)
+			//
 		}
 	}
 

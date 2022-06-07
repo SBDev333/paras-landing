@@ -18,7 +18,7 @@ import FilterAttribute from 'components/Filter/FilterAttribute'
 import ArtistVerified from 'components/Common/ArtistVerified'
 import { generateFromString } from 'generate-avatar'
 import DeleteCollectionModal from 'components/Modal/DeleteCollectionModal'
-import { sentryCaptureException } from 'lib/sentry'
+
 import { useToast } from 'hooks/useToast'
 import LineClampText from 'components/Common/LineClampText'
 import ButtonScrollTop from 'components/Common/ButtonScrollTop'
@@ -481,7 +481,7 @@ const CollectionPage = ({ collectionId, collection, serverQuery }) => {
 			}
 			setDeleteLoading(false)
 		} catch (err) {
-			sentryCaptureException(err)
+			//
 			const msg = err.response?.data?.message || `${localeLn(`DeleteFailed`)}`
 			toast.show({
 				text: <div className="font-semibold text-center text-sm">{msg}</div>,

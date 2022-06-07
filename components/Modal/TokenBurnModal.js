@@ -3,7 +3,7 @@ import Button from 'components/Common/Button'
 import Modal from 'components/Common/Modal'
 import LoginModal from './LoginModal'
 import { GAS_FEE } from 'config/constants'
-import { sentryCaptureException } from 'lib/sentry'
+
 import { useIntl } from 'hooks/useIntl'
 import { trackBurnToken } from 'lib/ga'
 import WalletHelper from 'lib/WalletHelper'
@@ -66,7 +66,7 @@ const TokenBurnModal = ({ show, onClose, data }) => {
 			}
 			setIsBurning(false)
 		} catch (err) {
-			sentryCaptureException(err)
+			//
 			setIsBurning(false)
 		}
 	}

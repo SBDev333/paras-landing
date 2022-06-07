@@ -7,7 +7,7 @@ import useStore from 'lib/store'
 import { useToast } from 'hooks/useToast'
 import { checkSocialMediaUrl } from 'utils/common'
 import { useRouter } from 'next/router'
-import { sentryCaptureException } from 'lib/sentry'
+
 import WalletHelper from 'lib/WalletHelper'
 import { useForm } from 'react-hook-form'
 import ReCAPTCHA from 'react-google-recaptcha'
@@ -78,7 +78,7 @@ const Verify = () => {
 			}
 			return status
 		} catch (err) {
-			sentryCaptureException(err)
+			//
 			const errMsg = 'SomethingWentWrong'
 			toast.show({
 				text: <div className="font-semibold text-center text-sm">{localeLn(errMsg)}</div>,
@@ -99,7 +99,7 @@ const Verify = () => {
 			const data = resp.data.data
 			setScheduleTimestamp(data.timestamp)
 		} catch (err) {
-			sentryCaptureException(err)
+			//
 			const errMsg = 'SomethingWentWrong'
 			toast.show({
 				text: <div className="font-semibold text-center text-sm">{localeLn(errMsg)}</div>,
@@ -129,7 +129,7 @@ const Verify = () => {
 				setFormState('form')
 			}
 		} catch (err) {
-			sentryCaptureException(err)
+			//
 			const errMsg = 'SomethingWentWrong'
 			toast.show({
 				text: <div className="font-semibold text-center text-sm">{localeLn(errMsg)}</div>,
@@ -186,7 +186,7 @@ const Verify = () => {
 			setIsSubmitting(false)
 			setIsDisable(false)
 		} catch (err) {
-			sentryCaptureException(err)
+			//
 			const errMsg = err.response.data.message || 'SomethingWentWrong'
 			toast.show({
 				text: <div className="font-semibold text-center text-sm">{localeLn(errMsg)}</div>,

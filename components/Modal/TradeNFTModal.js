@@ -1,7 +1,7 @@
 import { useIntl } from 'hooks/useIntl'
 import Modal from 'components/Common/Modal'
 import Button from 'components/Common/Button'
-import { sentryCaptureException } from 'lib/sentry'
+
 import { IconX } from 'components/Icons'
 import { useState } from 'react'
 import AddTradeNFTUrlModal from './AddTradeNFTUrlModal'
@@ -61,7 +61,7 @@ const TradeNFTModal = ({ data, show, onClose, tokenType, fromUpdate = false }) =
 			}
 			return false
 		} catch (err) {
-			sentryCaptureException(err)
+			//
 		}
 	}
 
@@ -150,7 +150,7 @@ const TradeNFTModal = ({ data, show, onClose, tokenType, fromUpdate = false }) =
 			}
 		} catch (err) {
 			setIsTrading(false)
-			sentryCaptureException(err)
+			//
 		}
 	}
 

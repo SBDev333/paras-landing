@@ -7,7 +7,7 @@ import JSBI from 'jsbi'
 import { GAS_FEE, STORAGE_MINT_FEE } from 'config/constants'
 import { IconX } from 'components/Icons'
 import { useIntl } from 'hooks/useIntl'
-import { sentryCaptureException } from 'lib/sentry'
+
 import { trackBuyTokenSeries, trackBuyTokenSeriesImpression } from 'lib/ga'
 import useProfileData from 'hooks/useProfileData'
 import { flagColor, flagText } from 'constants/flag'
@@ -59,7 +59,7 @@ const TokenSeriesBuyModal = ({ show, onClose, data }) => {
 			}
 			setIsBuying(false)
 		} catch (err) {
-			sentryCaptureException(err)
+			//
 			setIsBuying(false)
 		}
 	}

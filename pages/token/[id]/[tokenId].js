@@ -5,7 +5,7 @@ import Footer from 'components/Footer'
 import Error from '../../404'
 import TokenDetail from 'components/Token/TokenDetail'
 import { parseImgUrl } from 'utils/common'
-import { sentryCaptureException } from 'lib/sentry'
+
 import useToken from 'hooks/useToken'
 import { useEffect, useState } from 'react'
 
@@ -120,7 +120,7 @@ export async function getServerSideProps({ params }) {
 
 		return { props: { initial: token, errorCode: token ? null : 404 } }
 	} catch (err) {
-		sentryCaptureException(err)
+		//
 		const errorCode = 404
 		return { props: { errorCode } }
 	}

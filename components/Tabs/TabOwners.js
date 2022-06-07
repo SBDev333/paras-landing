@@ -3,7 +3,7 @@ import Avatar from 'components/Common/Avatar'
 import Button from 'components/Common/Button'
 import TokenBuyModal from 'components/Modal/TokenBuyModal'
 import TokenUpdatePriceModal from 'components/Modal/TokenUpdatePriceModal'
-import { sentryCaptureException } from 'lib/sentry'
+
 import useStore from 'lib/store'
 import { formatNearAmount } from 'near-api-js/lib/utils/format'
 import Link from 'next/link'
@@ -175,7 +175,7 @@ const Owner = ({ initial = {}, onBuy, onUpdateListing }) => {
 			const newData = resp.data.data.results[0] || {}
 			setProfile(newData)
 		} catch (err) {
-			sentryCaptureException(err)
+			//
 		}
 	}
 

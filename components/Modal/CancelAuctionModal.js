@@ -2,7 +2,7 @@ import useStore from 'lib/store'
 import { useIntl } from 'hooks/useIntl'
 import Modal from 'components/Common/Modal'
 import Button from 'components/Common/Button'
-import { sentryCaptureException } from 'lib/sentry'
+
 import { GAS_FEE, STORAGE_ADD_MARKET_FEE } from 'config/constants'
 import JSBI from 'jsbi'
 import { IconX } from 'components/Icons'
@@ -43,7 +43,7 @@ const CancelAuctionModal = ({ data, show, onClose, onSuccess }) => {
 			}
 			return false
 		} catch (err) {
-			sentryCaptureException(err)
+			//
 		}
 	}
 
@@ -117,7 +117,7 @@ const CancelAuctionModal = ({ data, show, onClose, onSuccess }) => {
 			}
 			setIsCancelAuction(false)
 		} catch (err) {
-			sentryCaptureException(err)
+			//
 			setIsCancelAuction(false)
 		}
 	}

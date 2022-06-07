@@ -10,7 +10,6 @@ import { useRouter } from 'next/router'
 import ActivityTopUsers from 'components/Activity/ActivityTopUsers'
 import { parseNearAmount } from 'near-api-js/lib/utils/format'
 import FilterActivity from 'components/Filter/FilterActivity'
-import { sentryCaptureException } from 'lib/sentry'
 
 const FETCH_TOKENS_LIMIT = 10
 import { useIntl } from 'hooks/useIntl'
@@ -143,7 +142,7 @@ const ActivityLog = ({ query }) => {
 				setActivityListIdBefore(newData.results[newData.results.length - 1]._id)
 			}
 		} catch (err) {
-			sentryCaptureException(err)
+			//
 		}
 		setIsFetching(false)
 	}

@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { sentryCaptureException } from 'lib/sentry'
+
 import { useState } from 'react'
 import { useToast } from 'hooks/useToast'
 import useStore from 'lib/store'
@@ -118,7 +118,7 @@ const AddCategoryModal = ({ onClose, categoryName, categoryId, curators }) => {
 			})
 			setIsLoading(false)
 		} catch (err) {
-			sentryCaptureException(err)
+			//
 			const msg = err.response?.data?.message || 'Something went wrong, try again later.'
 			toast.show({
 				text: <div className="font-semibold text-center text-sm">{msg}</div>,

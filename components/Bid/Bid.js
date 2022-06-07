@@ -9,7 +9,7 @@ import PlaceBidModal from 'components/Modal/PlaceBidModal'
 import useStore from 'lib/store'
 import { parseImgUrl, prettyBalance, prettyTruncate, timeAgo } from 'utils/common'
 import { useIntl } from 'hooks/useIntl'
-import { sentryCaptureException } from 'lib/sentry'
+
 import TokenSeriesDetailModal from '../TokenSeries/TokenSeriesDetailModal'
 import cachios from 'cachios'
 import {
@@ -304,7 +304,7 @@ const Bid = ({ data, type, freshFetch }) => {
 				setTimeout(freshFetch, 2500)
 			}
 		} catch (err) {
-			sentryCaptureException(err)
+			//
 		}
 	}
 
@@ -430,7 +430,7 @@ const Bid = ({ data, type, freshFetch }) => {
 				}
 			}
 		} catch (error) {
-			sentryCaptureException(error)
+			//
 		}
 	}
 

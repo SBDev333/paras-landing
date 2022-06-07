@@ -19,7 +19,7 @@ import Button from 'components/Common/Button'
 import { InputText, InputTextarea, InputTextAuto } from 'components/Common/form'
 import CreateCollectionModal from 'components/Collection/CreateCollectionModal'
 import { useIntl } from 'hooks/useIntl'
-import { sentryCaptureException } from 'lib/sentry'
+
 import Scrollbars from 'react-custom-scrollbars'
 import getConfig from 'config/near'
 import Tooltip from 'components/Common/Tooltip'
@@ -195,7 +195,7 @@ const NewPage = () => {
 				window.sessionStorage.setItem(`categoryToken`, store.selectedCategory)
 			}
 		} catch (err) {
-			sentryCaptureException(err)
+			//
 			const msg = err.response?.data?.message || `Something went wrong, try again later`
 			toast.show({
 				text: <div className="font-semibold text-center text-sm">{msg}</div>,
@@ -253,7 +253,7 @@ const NewPage = () => {
 				}, 2000)
 			}
 		} catch (err) {
-			sentryCaptureException(err)
+			//
 			const msg = err.response?.data?.message || `Something went wrong, try again later`
 			toast.show({
 				text: <div className="font-semibold text-center text-sm">{msg}</div>,
@@ -400,7 +400,7 @@ const NewPage = () => {
 				setShowConfirmModal(true)
 			}
 		} catch (err) {
-			sentryCaptureException(err)
+			//
 		}
 	}
 
@@ -528,7 +528,6 @@ const NewPage = () => {
 					}
 				)
 				if (res.status === 403 || res.status === 400) {
-					sentryCaptureException(res.data?.message || `Token series still haven't exist`)
 					return
 				}
 				window.sessionStorage.removeItem('categoryToken')

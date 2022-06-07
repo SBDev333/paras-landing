@@ -6,7 +6,7 @@ import ImgCrop from 'components/ImgCrop'
 import Nav from 'components/Nav'
 import { useIntl } from 'hooks/useIntl'
 import { useToast } from 'hooks/useToast'
-import { sentryCaptureException } from 'lib/sentry'
+
 import useStore from 'lib/store'
 import WalletHelper from 'lib/WalletHelper'
 import Head from 'next/head'
@@ -148,7 +148,7 @@ const CollectionPageEdit = ({ collectionId }) => {
 				router.push(`/collection/${resp.data.data.collection.collection_id}`)
 			}
 		} catch (err) {
-			sentryCaptureException(err)
+			//
 			const msg = err.response?.data?.message || 'Something went wrong, try again later.'
 			toast.show({
 				text: <div className="font-semibold text-center text-sm">{msg}</div>,

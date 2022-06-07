@@ -5,7 +5,7 @@ import { useIntl } from 'hooks/useIntl'
 import Modal from 'components/Common/Modal'
 import Button from 'components/Common/Button'
 import { InputText } from 'components/Common/form'
-import { sentryCaptureException } from 'lib/sentry'
+
 import { GAS_FEE, STORAGE_ADD_MARKET_FEE } from 'config/constants'
 import { parseNearAmount } from 'near-api-js/lib/utils/format'
 import JSBI from 'jsbi'
@@ -60,7 +60,7 @@ const TokenAuctionBidModal = ({ data, show, onClose, onSuccess }) => {
 			}
 			return false
 		} catch (err) {
-			sentryCaptureException(err)
+			//
 		}
 	}
 
@@ -135,7 +135,7 @@ const TokenAuctionBidModal = ({ data, show, onClose, onSuccess }) => {
 			}
 			setIsBidding(false)
 		} catch (err) {
-			sentryCaptureException(err)
+			//
 			setIsBidding(false)
 		}
 	}

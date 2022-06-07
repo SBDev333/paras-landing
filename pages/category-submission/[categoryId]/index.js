@@ -11,7 +11,7 @@ import { useToast } from 'hooks/useToast'
 import useStore from 'lib/store'
 import { parseImgUrl, timeAgo } from 'utils/common'
 import { useIntl } from 'hooks/useIntl'
-import { sentryCaptureException } from 'lib/sentry'
+
 import TokenSeriesDetailModal from 'components/TokenSeries/TokenSeriesDetailModal'
 import WalletHelper from 'lib/WalletHelper'
 
@@ -47,7 +47,7 @@ const CategorySubmission = () => {
 				})
 				setSubmissions(res.data.data.results)
 			} catch (error) {
-				sentryCaptureException(error)
+				//
 				if (error.response.status === 401) {
 					toast.show({
 						text: (
@@ -152,7 +152,7 @@ const SubmissionDetail = ({ submission, updateData }) => {
 			setShowModal('')
 			updateData(submission._id)
 		} catch (error) {
-			sentryCaptureException(error)
+			//
 		}
 
 		setIsLoading(false)

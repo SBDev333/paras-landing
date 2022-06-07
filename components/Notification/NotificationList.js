@@ -4,7 +4,7 @@ import axios from 'axios'
 import InfiniteScroll from 'react-infinite-scroll-component'
 import Scrollbars from 'react-custom-scrollbars'
 import { useIntl } from 'hooks/useIntl'
-import { sentryCaptureException } from 'lib/sentry'
+
 import NotificationItem from './NotificationItem'
 import WalletHelper from 'lib/WalletHelper'
 
@@ -111,7 +111,7 @@ const NotificationList = () => {
 				setNotificationListIdBefore(newData.results[newData.results.length - 1]._id)
 			}
 		} catch (err) {
-			sentryCaptureException(err)
+			//
 		}
 		setIsFetching(false)
 	}

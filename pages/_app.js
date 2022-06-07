@@ -19,8 +19,7 @@ import 'croppie/croppie.css'
 
 import ToastProvider from 'hooks/useToast'
 import { SWRConfig } from 'swr'
-import * as Sentry from '@sentry/nextjs'
-import { sentryCaptureException } from 'lib/sentry'
+
 import { GTM_ID, pageview } from 'lib/gtm'
 import SuccessTransactionModal from 'components/Modal/SuccessTransactionModal'
 import WalletHelper from 'lib/WalletHelper'
@@ -179,12 +178,6 @@ function MyApp({ Component, pageProps }) {
 		store.setCurrentUser(currentUser.accountId)
 		store.setUserBalance(currentUser.balance)
 
-		Sentry.configureScope((scope) => {
-			const user = currentUser ? { id: currentUser.accountId } : null
-			scope.setUser(user)
-			scope.setTag('environment', process.env.APP_ENV)
-		})
-
 		const userProfileResp = await axios.get(`${process.env.V2_API_URL}/profiles`, {
 			params: {
 				accountId: currentUser.accountId,
@@ -206,7 +199,7 @@ function MyApp({ Component, pageProps }) {
 				})
 				store.setUserProfile(resp.data.data)
 			} catch (err) {
-				sentryCaptureException(err)
+				//
 				store.setUserProfile({})
 			}
 		} else {
@@ -248,7 +241,7 @@ function MyApp({ Component, pageProps }) {
 			)
 			store.setNearUsdPrice(nearUsdPrice.data.near.usd)
 		} catch (error) {
-			sentryCaptureException('Failed Coingecko')
+			//
 		}
 	}
 

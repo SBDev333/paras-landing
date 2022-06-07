@@ -6,7 +6,7 @@ import { GAS_FEE } from 'config/constants'
 import { InputText } from 'components/Common/form'
 import { IconX } from 'components/Icons'
 import { useIntl } from 'hooks/useIntl'
-import { sentryCaptureException } from 'lib/sentry'
+
 import { trackBurnTokenSeries } from 'lib/ga'
 import WalletHelper from 'lib/WalletHelper'
 import useStore from 'lib/store'
@@ -72,7 +72,7 @@ const TokenSeriesBurnModal = ({ show, onClose, data }) => {
 			}
 			setIsBurning(false)
 		} catch (err) {
-			sentryCaptureException(err)
+			//
 			setIsBurning(false)
 		}
 	}

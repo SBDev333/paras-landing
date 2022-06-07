@@ -3,7 +3,7 @@ import { parseDate, prettyBalance } from 'utils/common'
 import { useIntl } from 'hooks/useIntl'
 import Modal from 'components/Common/Modal'
 import Button from 'components/Common/Button'
-import { sentryCaptureException } from 'lib/sentry'
+
 import { GAS_FEE_150, STORAGE_ADD_MARKET_FEE } from 'config/constants'
 import JSBI from 'jsbi'
 import { IconInfo } from 'components/Icons'
@@ -67,7 +67,7 @@ const AcceptBidAuctionModal = ({ data, show, onClose, onSuccess }) => {
 			}
 			return false
 		} catch (err) {
-			sentryCaptureException(err)
+			//
 		}
 	}
 
@@ -140,7 +140,7 @@ const AcceptBidAuctionModal = ({ data, show, onClose, onSuccess }) => {
 			}
 			setIsAcceptBid(false)
 		} catch (err) {
-			sentryCaptureException(err)
+			//
 			setIsAcceptBid(false)
 		}
 	}

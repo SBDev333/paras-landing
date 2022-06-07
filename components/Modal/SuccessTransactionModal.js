@@ -11,7 +11,7 @@ import WalletHelper, { walletType } from 'lib/WalletHelper'
 import { formatNearAmount } from 'near-api-js/lib/utils/format'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
-import { sentryCaptureException } from 'lib/sentry'
+
 import {
 	FacebookIcon,
 	FacebookShareButton,
@@ -250,7 +250,6 @@ const SuccessTransactionModal = () => {
 					}
 				)
 				if (res.status === 403 || res.status === 400) {
-					sentryCaptureException(res.data?.message || `Token series still haven't exist`)
 					return
 				}
 				window.sessionStorage.removeItem('categoryToken')

@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import Footer from 'components/Footer'
 import Nav from 'components/Nav'
-import { sentryCaptureException } from 'lib/sentry'
+
 import { useIntl } from 'hooks/useIntl'
 
 const EmailVerification = () => {
@@ -28,7 +28,7 @@ const EmailVerification = () => {
 			setEmailVerified(true)
 			setIsLoading(false)
 		} catch (error) {
-			sentryCaptureException(error)
+			//
 			setMessage(error.response.data.message)
 			setIsLoading(false)
 		}

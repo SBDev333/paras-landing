@@ -7,7 +7,7 @@ import { InputText } from 'components/Common/form'
 import { GAS_FEE, STORAGE_MINT_FEE } from 'config/constants'
 import { IconX } from 'components/Icons'
 import { useIntl } from 'hooks/useIntl'
-import { sentryCaptureException } from 'lib/sentry'
+
 import { trackMintToken } from 'lib/ga'
 import axios from 'axios'
 import getConfig from 'config/near'
@@ -52,7 +52,7 @@ const TokenSeriesMintModal = ({ show, onClose, data }) => {
 					throw new Error(`Account ${receiverId} not exist`)
 				}
 			} catch (err) {
-				sentryCaptureException(err)
+				//
 				const message = err.message || 'Something went wrong, try again later'
 				toast.show({
 					text: <div className="font-semibold text-center text-sm">{message}</div>,
@@ -100,7 +100,7 @@ const TokenSeriesMintModal = ({ show, onClose, data }) => {
 			}
 			setIsMinting(false)
 		} catch (err) {
-			sentryCaptureException(err)
+			//
 			setIsMinting(false)
 		}
 	}

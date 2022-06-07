@@ -6,7 +6,7 @@ import LoginModal from './LoginModal'
 import { GAS_FEE, STORAGE_ADD_MARKET_FEE } from 'config/constants'
 import { IconX } from 'components/Icons'
 import { useIntl } from 'hooks/useIntl'
-import { sentryCaptureException } from 'lib/sentry'
+
 import { trackStorageDeposit } from 'lib/ga'
 import useStore from 'lib/store'
 import WalletHelper from 'lib/WalletHelper'
@@ -33,7 +33,7 @@ const TokenStorageModal = ({ show, onClose }) => {
 				deposit: STORAGE_ADD_MARKET_FEE,
 			})
 		} catch (err) {
-			sentryCaptureException(err)
+			//
 		}
 	}
 

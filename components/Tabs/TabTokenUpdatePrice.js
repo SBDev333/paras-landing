@@ -6,7 +6,7 @@ import { InputText } from 'components/Common/form'
 import { GAS_FEE, GAS_FEE_200, STORAGE_ADD_MARKET_FEE, STORAGE_APPROVE_FEE } from 'config/constants'
 import { IconInfo } from 'components/Icons'
 import { useIntl } from 'hooks/useIntl'
-import { sentryCaptureException } from 'lib/sentry'
+
 import { trackRemoveListingToken, trackUpdateListingToken } from 'lib/ga'
 import { useForm } from 'react-hook-form'
 import useStore from 'lib/store'
@@ -108,7 +108,7 @@ const TabTokenUpdatePrice = ({ show, onClose, data }) => {
 				setNeedDeposit(true)
 			}
 		} catch (err) {
-			sentryCaptureException(err)
+			//
 		}
 	}
 
@@ -168,7 +168,7 @@ const TabTokenUpdatePrice = ({ show, onClose, data }) => {
 			}
 			setIsUpdatingPrice(false)
 		} catch (err) {
-			sentryCaptureException(err)
+			//
 			setIsUpdatingPrice(false)
 		}
 	}
@@ -247,7 +247,7 @@ const TabTokenUpdatePrice = ({ show, onClose, data }) => {
 
 			setIsRemovingPrice(false)
 		} catch (err) {
-			sentryCaptureException(err)
+			//
 		}
 	}
 
